@@ -27,6 +27,8 @@
     <distributionManagement>
         <repository>
             <id>terrific</id>
+            <name>Maven Package thingy for TerrificTable/KotlinTables</name>
+            <url>https://maven.pkg.github.com/TerrificTable/KotlinTables</url>
         </repository>
     </distributionManagement>
 
