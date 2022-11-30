@@ -23,7 +23,7 @@
 
     <servers>
         <server>
-            <id>github</id>
+            <id>terrific</id>
             <username>${{ secrets.USER_NAME }}</username>
             <password>${{ secrets.ACCESS_TOKEN }}</password>
         </server>
