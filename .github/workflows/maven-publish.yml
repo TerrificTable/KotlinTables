@@ -31,6 +31,6 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy --batch-mode $GITHUB_WORKSPACE/pom.xml
+      run: mvn deploy --batch-mode $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
