@@ -10,38 +10,49 @@ class Table(private var tableHeaders: Cell, private var tableContent: ArrayList<
 
     fun print() {
         printHeaders()
-        printSeparator(true)
         printData()
         if (footer?.data != null) {
-            printSeparator(false)
+            printSeparator()
             var len = 0
             for (i: String in tableHeaders.data) {
-                len += (maxLen(tableHeaders.data.indexOf(i)) + 2)
+                len += (if (maxLen(tableHeaders.data.indexOf(i)) < i.length) i.length else maxLen(tableHeaders.data.indexOf(i)))
             }
-            println(Align(footer!!, len).align())
+            println(Align(footer!!, len + tableHeaders.data.size).align())
         }
     }
 
 
     private fun printHeaders() {
         for (i: String in tableHeaders.data) {
-            print("$i  ${" ".repeat(maxLen(tableHeaders.data.indexOf(i)) - i.length)}")
+            val len = maxLen(tableHeaders.data.indexOf(i)) - i.length
+            print("$i  ${" ".repeat(if (len < 0) 0 else len)}")
+        }
+        println()
+        for (i: String in tableHeaders.data) {
+            var len = maxLen(tableHeaders.data.indexOf(i))
+            if (len < i.length) len = i.length
+            print("${"-".repeat(len)}  ")
         }
         println()
     }
     private fun printData() {
         for (i: Cell in tableContent) {
             for (j: String in i.data) {
-                print("$j  ${" ".repeat(maxLen(i.data.indexOf(j)) - j.length)}")
+                var len = maxLen(i.data.indexOf(j))
+                if (len < tableHeaders.data[i.data.indexOf(j)].length) len = tableHeaders.data[i.data.indexOf(j)].length
+                len -= j.length
+                print("$j  ${" ".repeat(len)}")
             }
             println()
         }
     }
-    private fun printSeparator(split: Boolean) {
+    private fun printSeparator() {
         for (i: String in tableHeaders.data) {
-            print("${"-".repeat(maxLen(tableHeaders.data.indexOf(i)))}${if (split) "  " else "--"}")
+            var len = maxLen(tableHeaders.data.indexOf(i))
+            if (len < i.length) len = i.length
+            print("-".repeat(len))
         }
-        println()
+        println("-".repeat(tableHeaders.data.size))
     }
 
     private fun maxLen(idx: Int): Int {

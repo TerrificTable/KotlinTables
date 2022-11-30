@@ -8,14 +8,14 @@ import xyz.terrific.elements.Footer
 fun main() {
     val headers = Cell(arrayListOf("firstname", "lastname"))
     val values  = arrayListOf(
-        Cell(arrayListOf("Peter", "Griffin")),
-        Cell(arrayListOf("Lois", "Griffin")),
-        Cell(arrayListOf("Glenn", "Quagmire")),
-        Cell(arrayListOf("Crystal", "Quagmire")),
-        Cell(arrayListOf("Cleveland", "Brown")),
-        Cell(arrayListOf("Loretta", "Brown")),
+        Cell(arrayListOf("Julian", "Douglas")),
+        Cell(arrayListOf("Eden", "Gallagher")),
+        Cell(arrayListOf("Helena", "Mcconnell")),
+        Cell(arrayListOf("Kade", "Bright")),
+        Cell(arrayListOf("Jordyn", "Garrett")),
+        Cell(arrayListOf("Kaylin", "Lawson")),
     )
-    val footer  = Footer("Family Guy Characters", Tablealign.CENTER)
+    val footer  = Footer("Names", Tablealign.CENTER)
 
     Table(headers, values, footer).print()
 }
