@@ -15,13 +15,7 @@
                 </repository>
                 <repository>
                     <id>terrific</id>
-                    <url>https://maven.pkg.github.com/TerrificTable/KotlinTables</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
+                    <url>https://maven.pkg.github.com/TerrificTable/KotlinTables/</url>
                 </repository>
             </repositories>
         </profile>
