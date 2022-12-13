@@ -4,12 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Tables</artifactId>
+    <artifactId>tables</artifactId>
     <groupId>xyz.terrific</groupId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <name>consoleApp</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,10 +25,11 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>Github Apache Maven Packages</name>
-            <url>https://maven.pkg.com/TerrificTable/KotlinTables</url>
+            <name>GitHub TerrificTable Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/TerrificTable/KotlinTables</url>
         </repository>
     </distributionManagement>
+
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
